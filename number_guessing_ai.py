@@ -11,10 +11,9 @@ def guess_number():
     print("Think of a number between 1 and 1000, and I'll guess it in 10 attempts or less!")
 
     while attempts < 10:
-        guess = int((max_val - min_val) / 2) + min_val
+        guess = int((max_val - min_val) // 2) + min_val
         print(f"I'm guessing: {guess}")
         response = input("Enter your response (Too small, Too big, You win): ").strip()
-
         if response == "Too small":
             min_val = guess + 1
         elif response == "Too big":
@@ -23,7 +22,7 @@ def guess_number():
             print(f"I've guessed your number in {attempts + 1} attempts!")
             return
         else:
-            print("I didn't understand your response. Please try again.")
+            print("Wrong input!")
 
         attempts += 1
 
